@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notefragment">
+
+    <fragment
+        android:id="@+id/notefragment"
+        android:name="com.example.notedown.fragments.Notefragment"
+        android:label="fragment_notefragment"
+        tools:layout="@layout/fragment_notefragment" >
+        <action
+            android:id="@+id/action_notefragment_to_saveOrUpdatefragment"
+            app:destination="@id/saveOrUpdatefragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveOrUpdatefragment"
+        android:name="com.example.notedown.fragments.SaveOrUpdatefragment"
+        android:label="fragment_save_or_updatefragment"
+        tools:layout="@layout/fragment_save_or_updatefragment" >
+        <action
+            android:id="@+id/action_saveOrUpdatefragment_to_notefragment"
+            app:destination="@id/notefragment" />
+
+        <argument android:name="Note"
+            android:defaultValue="@null"
+            app:argType="com.example.notedown.model.Note"
+            app:nullable="true">
+
+
+        </argument>
+    </fragment>
+</navigation>
